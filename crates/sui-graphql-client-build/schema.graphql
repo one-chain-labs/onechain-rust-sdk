@@ -4640,7 +4640,7 @@ type Validator {
 	"""
 	Pending stake withdrawn during the current epoch, emptied at epoch boundaries.
 	"""
-	pendingTotalSuiWithdraw: BigInt
+	pendingTotalOctWithdraw: BigInt
 	"""
 	Pending pool token withdrawn during the current epoch, emptied at epoch boundaries.
 	"""

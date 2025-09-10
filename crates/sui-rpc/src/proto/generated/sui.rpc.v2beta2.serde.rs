@@ -18850,7 +18850,7 @@ impl serde::Serialize for StakingPool {
         if self.pending_stake.is_some() {
             len += 1;
         }
-        if self.pending_total_sui_withdraw.is_some() {
+        if self.pending_total_oct_withdraw.is_some() {
             len += 1;
         }
         if self.pending_pool_token_withdraw.is_some() {
@@ -18896,10 +18896,10 @@ impl serde::Serialize for StakingPool {
             #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("pendingStake", ToString::to_string(&v).as_str())?;
         }
-        if let Some(v) = self.pending_total_sui_withdraw.as_ref() {
+        if let Some(v) = self.pending_total_oct_withdraw.as_ref() {
             #[allow(clippy::needless_borrow)]
             #[allow(clippy::needless_borrows_for_generic_args)]
-            struct_ser.serialize_field("pendingTotalSuiWithdraw", ToString::to_string(&v).as_str())?;
+            struct_ser.serialize_field("pendingTotalOctWithdraw", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.pending_pool_token_withdraw.as_ref() {
             #[allow(clippy::needless_borrow)]
@@ -18934,8 +18934,8 @@ impl<'de> serde::Deserialize<'de> for StakingPool {
             "exchangeRates",
             "pending_stake",
             "pendingStake",
-            "pending_total_sui_withdraw",
-            "pendingTotalSuiWithdraw",
+            "pending_total_oct_withdraw",
+            "pendingTotalOctWithdraw",
             "pending_pool_token_withdraw",
             "pendingPoolTokenWithdraw",
             "extra_fields",
@@ -18952,7 +18952,7 @@ impl<'de> serde::Deserialize<'de> for StakingPool {
             PoolTokenBalance,
             ExchangeRates,
             PendingStake,
-            PendingTotalSuiWithdraw,
+            PendingTotalOctWithdraw,
             PendingPoolTokenWithdraw,
             ExtraFields,
             __SkipField__,
@@ -18985,7 +18985,7 @@ impl<'de> serde::Deserialize<'de> for StakingPool {
                             "poolTokenBalance" | "pool_token_balance" => Ok(GeneratedField::PoolTokenBalance),
                             "exchangeRates" | "exchange_rates" => Ok(GeneratedField::ExchangeRates),
                             "pendingStake" | "pending_stake" => Ok(GeneratedField::PendingStake),
-                            "pendingTotalSuiWithdraw" | "pending_total_sui_withdraw" => Ok(GeneratedField::PendingTotalSuiWithdraw),
+                            "pendingTotalOctWithdraw" | "pending_total_oct_withdraw" => Ok(GeneratedField::PendingTotalOctWithdraw),
                             "pendingPoolTokenWithdraw" | "pending_pool_token_withdraw" => Ok(GeneratedField::PendingPoolTokenWithdraw),
                             "extraFields" | "extra_fields" => Ok(GeneratedField::ExtraFields),
                             _ => Ok(GeneratedField::__SkipField__),
@@ -19017,7 +19017,7 @@ impl<'de> serde::Deserialize<'de> for StakingPool {
                 let mut pool_token_balance__ = None;
                 let mut exchange_rates__ = None;
                 let mut pending_stake__ = None;
-                let mut pending_total_sui_withdraw__ = None;
+                let mut pending_total_oct_withdraw__ = None;
                 let mut pending_pool_token_withdraw__ = None;
                 let mut extra_fields__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -19082,11 +19082,11 @@ impl<'de> serde::Deserialize<'de> for StakingPool {
                                 map_.next_value::<::std::option::Option<crate::_serde::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
-                        GeneratedField::PendingTotalSuiWithdraw => {
-                            if pending_total_sui_withdraw__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("pendingTotalSuiWithdraw"));
+                        GeneratedField::PendingTotalOctWithdraw => {
+                            if pending_total_oct_withdraw__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("pendingTotalOctWithdraw"));
                             }
-                            pending_total_sui_withdraw__ = 
+                            pending_total_oct_withdraw__ = 
                                 map_.next_value::<::std::option::Option<crate::_serde::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
@@ -19118,7 +19118,7 @@ impl<'de> serde::Deserialize<'de> for StakingPool {
                     pool_token_balance: pool_token_balance__,
                     exchange_rates: exchange_rates__,
                     pending_stake: pending_stake__,
-                    pending_total_sui_withdraw: pending_total_sui_withdraw__,
+                    pending_total_oct_withdraw: pending_total_oct_withdraw__,
                     pending_pool_token_withdraw: pending_pool_token_withdraw__,
                     extra_fields: extra_fields__,
                 })

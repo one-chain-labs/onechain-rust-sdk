@@ -98,7 +98,7 @@ pub struct Validator {
     /// Pending stake amount for this epoch.
     pub pending_stake: Option<BigInt>,
     /// Pending stake withdrawn during the current epoch, emptied at epoch boundaries.
-    pub pending_total_sui_withdraw: Option<BigInt>,
+    pub pending_total_oct_withdraw: Option<BigInt>,
     /// Total number of pool tokens issued by the pool.
     pub pool_token_balance: Option<BigInt>,
     /// Validator's homepage URL.

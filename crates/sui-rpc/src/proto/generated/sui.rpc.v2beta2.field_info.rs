@@ -4026,8 +4026,8 @@ mod _field_impls {
             message_fields: None,
         };
         pub const PENDING_TOTAL_SUI_WITHDRAW_FIELD: &'static MessageField = &MessageField {
-            name: "pending_total_sui_withdraw",
-            json_name: "pendingTotalSuiWithdraw",
+            name: "pending_total_oct_withdraw",
+            json_name: "pendingTotalOctWithdraw",
             number: 9i32,
             message_fields: None,
         };
